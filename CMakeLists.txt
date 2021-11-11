@@ -18,6 +18,12 @@ if(CATKIN_DEVEL_PREFIX)
     message(STATUS "Build package with catkin")
     set(BUILD_WITHOUT_ROS OFF)
     find_package(catkin REQUIRED)
+    catkin_package(
+        LIBRARIES ${PROJECT_NAME}
+        INCLUDE_DIRS include 
+        # CATKIN_DEPENDS async_port
+        # DEPENDS system_lib
+    )
 else()
     message(STATUS "Build package with cmake")
     set(BUILD_WITHOUT_ROS ON)    
@@ -187,13 +193,6 @@ if(BUILD_WITHOUT_ROS) # BUILD_WITHOUT_ROS
     include(CPack)
 
 else() # BUILD_WITHOUT_ROS
-
-    catkin_package(
-        LIBRARIES ${PROJECT_NAME}
-        INCLUDE_DIRS include 
-        # CATKIN_DEPENDS async_port
-        # DEPENDS system_lib
-    )
 
     ## Add catkin install targets
     install(TARGETS ${PROJECT_NAME}
