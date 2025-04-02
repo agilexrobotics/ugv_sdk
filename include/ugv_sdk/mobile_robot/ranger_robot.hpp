@@ -17,7 +17,14 @@
 namespace westonrobot {
 class RangerRobot : public RobotCommonInterface, public RangerInterface {
  public:
-  RangerRobot(bool is_mini_v1);
+ enum class Variant {
+  kRangerMiniV1 = 0,
+  kRangerMiniV2,
+  kRangerMiniV3,
+  kRanger,
+};
+
+  RangerRobot(Variant variant);
   ~RangerRobot();
 
   bool Connect(std::string can_name) override;

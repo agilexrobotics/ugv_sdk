@@ -6,6 +6,7 @@
  * @Mail      : wangzheqie@qq.com
  * Copyright  : AgileX Robotics
  **/
+#include <string>
 
 #include <iomanip>
 
@@ -15,7 +16,7 @@ using namespace westonrobot;
 
 int main(int argc, char *argv[]) {
   std::string device_name;
-  bool is_mini_v1 = false;
+  RangerRobot::Variant variant = RangerRobot::Variant::kRanger;
 
   if (argc == 2) {
     device_name = {argv[1]};
@@ -24,19 +25,28 @@ int main(int argc, char *argv[]) {
     device_name = {argv[1]};
     std::string check = argv[2];
     if (check == "mini_v1") {
-      is_mini_v1 = true;
+      variant = RangerRobot::Variant::kRangerMiniV1;
       std::cout << "Specified mini v1" << std::endl;
+    } else if (check == "mini_v2") {
+      variant = RangerRobot::Variant::kRangerMiniV2;
+      std::cout << "Specified mini v2" << std::endl;
+    } else if (check == "mini_v3") {
+      variant = RangerRobot::Variant::kRangerMiniV3;
+      std::cout << "Specified mini v3" << std::endl;
+    } else {
+      std::cout << "Default to ranger base" << std::endl;
     }
     std::cout << "Specified CAN: " << device_name << std::endl;
   } else {
     std::cout << "Usage: app_ranger_demo <interface> <ranger_model>"
               << std::endl
-              << "Example 1: ./app_ranger_demo can0 mini_v1" << std::endl;
+              << "Example 1: ./app_ranger_demo can0 <mini_v1, mini_v2, mini_v3>"
+              << std::endl;
     return -1;
   }
 
   // RangerMiniV1Robot ranger;
-  auto ranger = std::make_shared<RangerRobot>(is_mini_v1);
+  auto ranger = std::make_shared<RangerRobot>(variant);
   ranger->Connect(device_name);
   ranger->EnableCommandedMode();
 
