@@ -25,20 +25,20 @@ It should also work in other similar Linux environments but only the above liste
 
 ### Robots and communication protocols
 
-|        Robot        | Protocol V1 | Protocol V2 | UART  |  CAN  | Support Status |
-| :-----------------: | :---------: | :---------: | :---: | :---: | :------------: |
-|    ~~Scout 1.0~~    |      Y      |      -      |   N   |   Y   |  Discontinued  |
-|      Scout 2.0      |      Y      |      Y      |   N   |   Y   |     Active     |
-|  Scout Mini (Skid)  |      Y      |      Y      |   -   |   Y   |     Active     |
-|  Scout Mini (Omni)  |      Y      |      Y      |   -   |   Y   |     Active     |
-|     Hunter 1.0      |      Y      |      Y      |   -   |   Y   |     Active     |
-|     Hunter 2.0      |      -      |      Y      |   -   |   Y   |     Active     |
-|       Bunker        |      Y      |      Y      |   -   |   Y   |     Active     |
-|       Tracer        |      -      |      Y      |   N   |   Y   |     Active     |
-| ~~Ranger Mini 1.0~~ |      -      |     Y*      |   -   |   Y   |  Discontinued  |
-|   Ranger Mini 2.0   |      -      |      Y      |   -   |   Y   |     Active     |
-|   Ranger Mini 3.0   |      -      |      Y      |   -   |   Y   |     Active     |
-|       Ranger        |      -      |      Y      |   -   |   Y   |     Active     |
+|        Robot        | Protocol V1 | Protocol V2 | UART | CAN  | Support Status |
+| :-----------------: | :---------: | :---------: | :--: | :--: | :------------: |
+|    ~~Scout 1.0~~    |      Y      |      -      |  N   |  Y   |  Discontinued  |
+|      Scout 2.0      |      Y      |      Y      |  N   |  Y   |     Active     |
+|  Scout Mini (Skid)  |      Y      |      Y      |  -   |  Y   |     Active     |
+|  Scout Mini (Omni)  |      Y      |      Y      |  -   |  Y   |     Active     |
+|     Hunter 1.0      |      Y      |      Y      |  -   |  Y   |     Active     |
+|     Hunter 2.0      |      -      |      Y      |  -   |  Y   |     Active     |
+|       Bunker        |      Y      |      Y      |  -   |  Y   |     Active     |
+|       Tracer        |      -      |      Y      |  N   |  Y   |     Active     |
+| ~~Ranger Mini 1.0~~ |      -      |     Y*      |  -   |  Y   |  Discontinued  |
+|   Ranger Mini 2.0   |      -      |      Y      |  -   |  Y   |     Active     |
+|   Ranger Mini 3.0   |      -      |      Y      |  -   |  Y   |     Active     |
+|       Ranger        |      -      |      Y      |  -   |  Y   |     Active     |
 
 **Important note:** 
 

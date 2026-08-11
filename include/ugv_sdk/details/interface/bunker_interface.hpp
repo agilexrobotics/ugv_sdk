@@ -28,8 +28,8 @@ struct BunkerActuatorState {
   SdkTimePoint time_stamp;
 
   // actuator state
-  ActuatorHSStateMessage actuator_hs_state[3];
-  ActuatorLSStateMessage actuator_ls_state[3];
+  ActuatorHSStateMessage actuator_hs_state[2];
+  ActuatorLSStateMessage actuator_ls_state[2];
   // - for v1 robots only
   ActuatorStateMessageV1 actuator_state[2];
 };
