@@ -1,6 +1,7 @@
 #ifndef RANGER_BASE_HPP
  #define RANGER_BASE_HPP
  
+ #include <cmath>
  #include <cstdint>
  #include <mutex>
  #include <string>
@@ -102,6 +103,19 @@
  
  using RangerMiniV3Base = RangerBase;
  class RangerMiniV2Base : public RangerBase {
+  public:
+   void SetMotionCommand(double linear_vel, double steer_angle,
+                         double angular_vel) override {
+     if (std::abs(angular_vel) > 1e-6) {
+       constexpr double kSpinRadius = 0.3068110167513546;
+       AgilexBase<ProtocolV2Parser>::SendMotionCommand(
+           linear_vel, 0.0, angular_vel * kSpinRadius, steer_angle);
+       return;
+     }
+ 
+     RangerBase::SetMotionCommand(linear_vel, steer_angle, angular_vel);
+   }
+ 
    RangerCommonSensorState GetCommonSensorState() override {
      auto common_sensor =
          AgilexBase<ProtocolV2Parser>::GetCommonSensorStateMsgGroup();
